@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cantoras</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f4f8;
+      padding: 30px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .buttons, .lyrics, .photo, .video {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .buttons {
+      width: 150px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #6d28d9;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #5b21b6;
+    }
+
+    .lyrics {
+      width: 300px;
+      min-height: 220px;
+      line-height: 1.5;
+    }
+
+    .photo {
+      width: 220px;
+      text-align: center;
+    }
+
+    .photo img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .video {
+      width: 360px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border-radius: 10px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="buttons">
+      <button onclick="showArtist('shakira')">Shakira</button>
+      <button onclick="showArtist('gaga')">Lady Gaga</button>
+      <button onclick="showArtist('madonna')">Madonna</button>
+    </div>
+
+    <div class="lyrics" id="lyricsBox">
+      Clique em uma cantora para ver um trecho da música.
+    </div>
+
+    <div class="photo">
+      <img id="artistImage" src="https://wallpapers.com/images/hd/singer-shakira-portrait-871mvituhvbv5mrv.jpg" alt="Imagem da artista">
+    </div>
+
+    <div class="video">
+      <H3>Hips don't lie</H3>
+    </div>
+
+  </div>
+
+  <script>
+    function showArtist(artist) {
+      const lyricsBox = document.getElementById("lyricsBox");
+      const image = document.getElementById("artistImage");
+     // const video = document.getElementById("artistVideo");
+
+      if (artist === "shakira") {
+        lyricsBox.innerHTML = `
+          <strong>Hips don't lie</strong><br><br>
+I'm on tonight <br>
+You know my hips don't lie (no fighting, no fighting) <br>
+And I'm starting to feel it's right <br>
+All the attraction, the tension <br>
+Don't you see, baby? This is perfection <br>
+        `;
+
+        image.src = "https://cdn.britannica.com/50/280450-050-378E9108/shakira-2025-met-gala-metropolitan-museum-of-art-new-york.jpg?w=400&h=225&c=crop";
+        video.src = "https://www.youtube.com/embed/DUT5rEU6pqM";
+      }
+
+      else if (artist === "gaga") {
+        lyricsBox.innerHTML = `
+          <strong>Lady Gaga</strong><br><br>
+          Trecho didático inspirado em uma música pop afirmativa.<br>
+          A canção fala sobre identidade e autoaceitação.<br>
+          O ritmo é forte e pensado para a pista de dança.<br>
+          A mensagem incentiva confiança e liberdade pessoal.<br>
+          A performance costuma ter forte impacto visual.
+        `;
+
+        image.src = "https://caras.com.br/wp-content/uploads/2025/05/show-em-risco-medico-alerta-lady-gaga-sobre-doenca-antes-de-copacabana-difusa.jpg";
+        video.src = "https://www.youtube.com/embed/wV1FrqwZyKw";
+      }
+
+      else if (artist === "madonna") {
+        lyricsBox.innerHTML = `
+          <strong>Madonna</strong><br><br>
+          Trecho didático inspirado em uma música pop clássica.<br>
+          A canção trabalha temas de reinvenção e provocação cultural.<br>
+          O estilo marcou uma geração da música pop.<br>
+          A artista combina imagem, dança e atitude no palco.<br>
+          A música representa bem sua influência na cultura pop.
+        `;
+
+        image.src = "https://i0.statig.com.br/bancodeimagens/6f/ti/lb/6ftilb1ajpyi80sdkg9jhxkjj.jpg";
+        video.src = "https://www.youtube.com/embed/79fzeNUqQbQ";
+      }
+    }
+  </script>
+
+</body>
+</html>
